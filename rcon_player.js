@@ -28,6 +28,9 @@ function setPlayerData(battlemetricsID, serversPlayedElm, playtimeElm, aimTrainP
         aimTrainPlaytimeElm.innerText = getAimTrainPlaytime(rustServers);
     }).catch(function (err) {
         console.warn("Rust BM+: API call resolved in an error", err);
+        serversPlayedElm.innerText = "Error";
+        playtimeElm.innerText = "Error";
+        aimTrainPlaytimeElm.innerText = "Error";
     });
 }
 
