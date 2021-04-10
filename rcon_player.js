@@ -1,5 +1,6 @@
 function addPlayerDataElement(typeOfElement, content, addElementTo) {
     var newElement = document.createElement(typeOfElement);
+    newElement.className = "bm-plus";
     newElement.appendChild(document.createTextNode(content));
     addElementTo.appendChild(newElement);
     return addElementTo.lastChild;
@@ -13,6 +14,7 @@ function addGameBanCheck(playerData) {
     EACChecker.innerText = "Click to check";
     EACChecker.href = "https://www.nexusonline.co.uk/bans/profile/?id=" + steamID;
     EACChecker.target = "_blank";
+    EACChecker.className = "bm-plus";
 
     var gameBanChecker = document.createElement("dd");
     gameBanChecker.appendChild(EACChecker);
@@ -35,9 +37,16 @@ function setPlayerData(battlemetricsID, serversPlayedElm, playtimeElm, aimTrainP
 }
 
 
+function removeBPPlusElements() {
+    const elements = document.getElementsByClassName("bm-plus");
+    while (elements.length > 0) elements[0].remove();
+}
+
+
 function main() {
     console.log("Executing");
     waitUntilElementExists("#RCONPlayerPage").then(function(result) {
+        removeBPPlusElements();
         steamInformationTab = document.getElementById("RCONPlayerPage").childNodes[1].childNodes[0].childNodes[1];
         playerData = steamInformationTab.childNodes[1].childNodes[0];
         steamID = playerData.children[1].children[0].getAttribute("href").match("[0-9]+$")[0];
