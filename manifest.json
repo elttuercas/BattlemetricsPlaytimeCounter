@@ -1,12 +1,18 @@
 {
-    "name": "Battlemetrics Playtime Counter by GK",
-    "version": "1.0",
-    "manifest_version": 2,
-    "content_scripts": [
-      {
-        "matches": ["*://www.battlemetrics.com/*", "*://battlemetrics.com/*"],
-        "js": ["query_data.js", "rcon_player.js"],
-        "run_at": "document_end"
-      }
-    ]
-  }
+  "name": "Battlemetrics Playtime Counter by GK",
+  "version": "1.0",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.battlemetrics.com/*",
+        "*://battlemetrics.com/*"
+      ],
+      "js": [
+        "query_data.js",
+        "rcon_player.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
