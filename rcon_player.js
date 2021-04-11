@@ -44,7 +44,6 @@ function removeBPPlusElements() {
 
 
 function main() {
-    console.log("Executing");
     waitUntilElementExists("#RCONPlayerPage").then(function(result) {
         removeBPPlusElements();
         steamInformationTab = document.getElementById("RCONPlayerPage").childNodes[1].childNodes[0].childNodes[1];
