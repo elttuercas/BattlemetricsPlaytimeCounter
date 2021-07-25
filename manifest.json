@@ -1,7 +1,8 @@
 {
+  "manifest_version": 2,
   "name": "BM+ by GK",
   "version": "1.0",
-  "manifest_version": 2,
+
   "content_scripts": [
     {
       "matches": [
@@ -11,13 +12,17 @@
       "js": [
         "query_data.js",
         "rcon_player.js"
-      ],
-      "run_at": "document_end"
-    }
-  ],
-  "icons": {
+      ]
+     }
+ ],
+ "permissions": [
+   "*://www.battlemetrics.com/*",
+   "*://api.battlemetrics.com/*",
+   "*://battlemetrics.com/*"
+ ],
+ "icons": {
     "16": "icons/16.png",
     "48": "icons/48.png",
     "128": "icons/128.png"
-  }
+ }
 }
